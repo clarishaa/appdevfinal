@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'dblaminsu',
+        'hostname'     => 'srv1151.hstgr.io',
+        'username'     => 'u602620830_clarishaaa',
+        'password'     => 'projectsaAppd3v',
+        'database'     => 'u602620830_dblaminsu',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
