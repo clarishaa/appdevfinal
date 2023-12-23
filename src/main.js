@@ -7,7 +7,7 @@ import VueToast from "vue-toast-notification";
 import 'vue-toast-notification/dist/theme-sugar.css';
 
 
-axios.defaults.baseURL = 'https://cbmlaminsu.online/';
+axios.defaults.baseURL = 'https://cbmlaminsu.online/backend/';
 
 createApp(App)
   .use(router)
