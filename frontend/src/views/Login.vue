@@ -19,7 +19,7 @@
               <div v-if="errorMessage" class="text-white text-center mb-3 p-2 bg-danger rounded small">
                 {{ errorMessage }}
               </div>
-              
+
               <div class="d-grid">
                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign
                   in</button>
@@ -27,7 +27,9 @@
               </div>
               <hr class="my-4">
               <div class="d-grid mb-2">
-                <a class="btn btn-success btn-login text-uppercase fw-bold" href="/signup">Create New Account</a>
+                <router-link to="/signup" class="btn btn-success btn-login text-uppercase fw-bold">
+                  Create New Account
+                </router-link>
               </div>
             </form>
           </div>
