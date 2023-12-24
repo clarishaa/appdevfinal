@@ -62,7 +62,7 @@
                     </div> -->
                 </div>
             </div>
-
+            <Resources v-if="dataLoaded" />
         </div>
         <Notification ref="notification" />
     </div>
@@ -71,15 +71,18 @@
 
 <script>
 import Notification from '@/components/Notification.vue';
-import axios from 'axios'
+import axios from 'axios';
+import Resources from '@/components/User/Resources.vue'
+
 export default {
     name: 'Menus',
     components: {
-        Notification
+        Notification, Resources
     },
     data() {
         return {
-            menus: [], categories: [],
+            menus: [], categories: [], dataLoaded: false,
+
         }
     },
     mounted() {
@@ -91,10 +94,13 @@ export default {
         async getMenu() {
             const menu = await axios.get("getMenu");
             this.menus = menu.data;
+            this.dataLoaded = true;
         },
         async getCategory() {
             const category = await axios.get("getCategory");
             this.categories = category.data;
+            this.dataLoaded = true;
+
         },
         async addCart(item_id) {
             try {

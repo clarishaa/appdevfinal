@@ -1,15 +1,16 @@
 <template>
-  <Headd />
-  <Resources />
-  <Top />
-  <Navbar />
-  <main>
-    <router-view />
-  </main>
+  <div>
+    <Headd />
+    <Resources v-if="dataLoaded" />
+    <Top />
+    <Navbar />
+    <main>
+      <router-view />
+    </main>
+  </div>
 </template>
-    
+
 <script>
-// @ is an alias to /src
 import Headd from '@/components/User/Headd.vue'
 import Resources from '@/components/User/Resources.vue'
 import Top from '@/components/User/Top.vue'
@@ -17,51 +18,21 @@ import Navbar from '@/components/User/Navbar.vue'
 import Foot from '@/components/User/Foot.vue'
 
 export default {
-  name: 'Main', 
+  name: 'Main',
   components: {
     Headd, Resources, Top, Navbar, Foot
   },
+  data() {
+    return {
+      dataLoaded: false,
+    };
+  },
   mounted() {
-
-    this.loadScripts();
-
+    setTimeout(() => {
+      this.dataLoaded = true;
+    }, 2000);
   },
-  methods: {
-    loadScripts() {
-      const scriptUrls = [
-        '/lib/jquery.min.js',
-        '/lib/wow/wow.min.js',
-        '/lib/easing/easing.min.js',
-        '/lib/waypoints/waypoints.min.js',
-        '/lib/owlcarousel/owl.carousel.min.js',
-        '/lib/counterup/counterup.min.js',
-        '/lib/parallax/parallax.min.js',
-        '/lib/isotope/isotope.pkgd.min.js',
-        '/lib/lightbox/js/lightbox.min.js',
-        '/js/main.js',
-
-      ];
-
-      const head = document.getElementsByTagName('head')[0];
-
-      function loadScript(index) {
-        if (index < scriptUrls.length) {
-          const script = document.createElement('script');
-          script.src = scriptUrls[index];
-          script.async = true;
-
-          script.onload = function () {
-            loadScript(index + 1);
-          };
-
-          head.appendChild(script);
-        }
-      }
-
-      loadScript(0);
-    },
-  },
-}
+};
 </script>
 
 <style>
