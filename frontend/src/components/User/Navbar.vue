@@ -53,8 +53,11 @@
                     </button>
                 </div>
             </div>
-            <a href="/cart" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Go to Cart<i
-                    class="fa fa-arrow-right ms-3"></i></a>
+            <router-link to="/cart" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">
+                Go to Cart
+                <i class="fa fa-arrow-right ms-3"></i>
+            </router-link>
+
         </div>
     </nav>
     <!-- Navbar End -->
