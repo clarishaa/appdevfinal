@@ -142,7 +142,7 @@ public function updateProd($id = null)
 
     public function handleImageUpload($image, $imageName)
     {
-        $uploadPath = 'C:\laragon\www\laminsufinal\laminsu\frontend\src\assets\img';
+        $uploadPath = 'img';
 
         $image->move($uploadPath, $imageName);
         return $imageName;
