@@ -1,7 +1,7 @@
 {
   "name": "La Minsu",
   "short_name": "La Minsu",
-  "theme_color": "#4DBA87",
+  "theme_color": "#348e38",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
