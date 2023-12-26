@@ -65,6 +65,7 @@ const routes = [
   {
     path: "/admin/",
     component: Admin,
+    meta: {requiresAuth: true},
     children: [
       { path: "", component: Dashboard },
       { path: "staff/:id?", component: Staff , name: "staff"},
