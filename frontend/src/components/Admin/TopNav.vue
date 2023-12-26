@@ -1,7 +1,7 @@
 <template>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top p-0">
-      <router-link to="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+      <router-link to="/admin" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h1 class="m-0">La MinSU</h1>
       </router-link>
       <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

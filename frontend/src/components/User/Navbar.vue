@@ -54,7 +54,7 @@
                     </button>
                 </div>
             </div>
-            <router-link to="/cart" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">
+            <router-link to="/cart" class="btn btn-primary py-4 px-lg-4 rounded-0">
                 Go to Cart
                 <i class="fa fa-arrow-right ms-3"></i>
             </router-link>

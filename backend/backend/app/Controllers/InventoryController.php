@@ -142,7 +142,7 @@ public function updateProd($id = null)
 
     public function handleImageUpload($image, $imageName)
     {
-        $uploadPath = 'img';
+        $uploadPath = '../../../img';
 
         $image->move($uploadPath, $imageName);
         return $imageName;

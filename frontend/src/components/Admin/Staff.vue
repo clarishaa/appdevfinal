@@ -261,11 +261,11 @@ export default {
             user_type: this.user_type,
             position: this.position
           });
-
-          console.log(response.data);
-          this.showMessage = false;
           this.closeModal();
           this.$refs.notification.open("Employee added.", 'success');
+          console.log(response.data);
+          this.showMessage = false;
+
         } catch (error) {
           console.error(error);
           if (error.response && error.response.status === 400) {
