@@ -73,7 +73,7 @@
 
               <hr class="my-4">
               <div class="d-grid mb-2">
-                <router-link to="/signin" class="btn btn-success btn-login text-uppercase fw-bold">
+                <router-link to="/signin" class="text-center">
                   Already have an account?
                 </router-link>
               </div>
