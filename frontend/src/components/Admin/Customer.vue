@@ -52,6 +52,8 @@
         <h5 class="card-title text-center mb-5 fw-light fs-5">{{ modalTitle }}</h5>
         <form @submit.prevent="register">
           <input type="hidden" v-model="user_type">
+          <input type="hidden" v-model="position">
+
           <!-- Email -->
           <div class="form-floating mb-3">
             <input type="email" @input="clearError" class="form-control" id="floatingInput" placeholder="name@example.com"
@@ -156,6 +158,7 @@ export default {
       emailError: '',
       passError: '',
       user_type: 'customer',
+      position: '',
       isUpdate: false,
       modalTitle: 'Add Customer',
       submitButtonText: 'Add',
@@ -242,6 +245,7 @@ export default {
             mobile: this.mobile,
             password: this.password,
             user_type: this.user_type,
+            position: this.position
           });
 
           console.log(response.data);
