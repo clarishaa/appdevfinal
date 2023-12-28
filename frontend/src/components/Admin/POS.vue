@@ -25,7 +25,7 @@
                                 <figure class="card card-product"
                                     style="height: 230px; border: 1px solid #ccc; border-radius: 10px; overflow: hidden; position: relative;">
                                     <div class="img-wrap" style="height: 70%;">
-                                        <img :src="`http://localhost:8080/uploads/${menu.img_path}`"  alt="menu.name"
+                                        <img :src="`https://cbmlaminsu.online/backend/uploads/${menu.img_path}`"  alt="menu.name"
                                             class="img-fluid" style="object-fit: cover; width: 100%; height: 100%;">
                                     </div>
                                     <figcaption class="info-wrap"

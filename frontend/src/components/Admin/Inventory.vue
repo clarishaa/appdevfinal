@@ -32,7 +32,7 @@
                             <tr v-for="(prod, index) in items" :key="index">
                                 <td>{{ index + 1 }}</td>
                                 <td style="width: 5rem; height: 5rem; overflow: hidden;">
-                                    <img :src="`http://localhost:8080/uploads/${prod.img_path}`"  class="img-fluid"
+                                    <img :src="`https://cbmlaminsu.online/backend/uploads/${menu.img_path}`"  class="img-fluid"
                                         alt="Image description" style="width: 100%; height: 100%; object-fit: cover;">
                                 </td>
                                 <td>{{ prod.item_name }}</td>
