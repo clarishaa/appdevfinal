@@ -102,6 +102,13 @@ class InventoryController extends ResourceController
         return $this->respond(["message" => "Failed to save product. Check logs for details."], 500);
     }
 }
+public function handleImageUpload($image, $imageName)
+{
+    $uploadPath = 'uploads';
+
+    $image->move($uploadPath, $imageName);
+    return $imageName;
+}
 
 public function updateProd($id = null)
 {
@@ -140,13 +147,6 @@ public function updateProd($id = null)
 }
 
 
-    public function handleImageUpload($image, $imageName)
-    {
-        $uploadPath = '../../../img';
-
-        $image->move($uploadPath, $imageName);
-        return $imageName;
-    }
 
 
 
