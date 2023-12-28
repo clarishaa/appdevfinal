@@ -139,14 +139,18 @@ public function updateProd($id = null)
     }
 }
 
+public function handleImageUpload($image, $imageName)
+{
+    $uploadPath = 'uploads';
 
-    public function handleImageUpload($image, $imageName)
-    {
-        $uploadPath = 'uploads';
-
-        $image->move($uploadPath, $imageName);
-        return $imageName;
+    if (!file_exists($uploadPath)) {
+        mkdir($uploadPath, 0755, true);
     }
+
+    $image->move($uploadPath, $imageName);
+    return $imageName;
+}
+
 
 
 
