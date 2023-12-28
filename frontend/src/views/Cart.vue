@@ -20,7 +20,7 @@
                                     <!-- Image -->
                                     <div class="bg-image hover-overlay hover-zoom ripple rounded"
                                         data-mdb-ripple-color="light">
-                                        <img :src="require('@/assets/img/' + getItem(carts).img_path)" class="img-fluid"
+                                        <img :src="`https://cbmlaminsu.online/backend/uploads/${getItem(carts).img_path}`"  class="img-fluid"
                                             alt="Image description" style="max-width: 50%; height: 50%;" />
                                         <a href="#!">
                                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)">

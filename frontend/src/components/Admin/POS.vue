@@ -78,7 +78,7 @@
                                             <td>
                                                 <div class="media">
                                                     <div class="img-wrap">
-                                                        <img :src="require('@/assets/img/' + cart.img_path)" class="img-xs"
+                                                        <img :src="`https://cbmlaminsu.online/backend/uploads/${cart.img_path}`" class="img-xs"
                                                             alt="" style="width: 75px; height: 75px;">
                                                     </div>
                                                     <div class="media-body" style="margin-top: 5px;">
