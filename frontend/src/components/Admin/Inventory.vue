@@ -328,6 +328,7 @@ export default {
                     console.error('Error saving product:', error);
                 }
             }
+            this.closeModal();
             this.getStaff();
         },
 
