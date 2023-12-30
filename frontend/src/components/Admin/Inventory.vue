@@ -296,10 +296,8 @@ export default {
                     }
 
                     await axios.post(`updateProd/${this.$route.params.id}`, formData);
-
-                    this.closeModal();
                     this.$refs.notification.open("Product info updated.", 'success');
-
+                    this.closeModal();
                 } catch (error) {
                     console.log(error);
                 }

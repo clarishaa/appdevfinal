@@ -210,9 +210,33 @@ class POSController extends ResourceController
             return $this->respond(['message' => 'Error during payment', 'error' => $e->getMessage()], 500);
         }
     }
-    public function cancelOrder()
+    public function cancelOrder($user_id = null)
     {
+        $model = new CartModel();
+    
+        // Find the cart(s) based on user_id
+        $carts = $model->where('user_id', $user_id)->findAll();
+    
+        // Check if any carts were found
+        if (!$carts) {
+            return $this->fail('No Data Found', 404);
+        }
+    
+        // Delete the found carts
+        $model->where('user_id', $user_id)->delete();
+    
+        // Check if the deletion was successful
+        $affectedRows = $model->affectedRows();
+    
+        if ($affectedRows === 0) {
+            return $this->fail('Failed to Delete', 400);
+        }
+    
+        return $this->respondDeleted('Deleted Successfully');
     }
+    
+
+    
 
     public function deleteCart($id = null)
     {

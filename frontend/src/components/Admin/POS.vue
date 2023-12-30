@@ -140,7 +140,6 @@
                                     <dt class="fw-bold">Total:</dt>
                                     <dd class="text-end"><span>₱ {{ total.toLocaleString('en-US') }}</span></dd>
                                 </dl>
-                                <form action="/posdel" method="post">
                                     <!-- Cart IDs Loop Placeholder -->
                                     <input type="hidden" name="cart_ids[]" value="cart_id">
                                     <div class="row">
@@ -156,7 +155,6 @@
                                             </button>
                                         </div>
                                     </div>
-                                </form>
 
                             </div> <!-- box -->
                         </div>
@@ -165,7 +163,7 @@
                         <form @submit.prevent="submitForm">
                             <div class="input-group mt-2">
                                 <input type="text" class="form-control" v-model="invoice_id" id="qrCodeInput"
-                                    placeholder="Scan QR or enter invoice number." />
+                                    placeholder="Enter invoice number." />
                                 <button type="submit" class="btn btn-primary me-1">Submit</button>
                             </div>
                         </form>
@@ -415,8 +413,10 @@ export default {
             console.log('Invoice ID submitted:', this.invoice_id);
         },
         async cancelOrder() {
+            const user_id = sessionStorage.getItem("user_id");
+
             try {
-                const response = await axios.post('cancelOrder');
+                const response = await axios.post(`/cancelOrder/${user_id}`);
 
             } catch (error) {
                 console.error(error);
