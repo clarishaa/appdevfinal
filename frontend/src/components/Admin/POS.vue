@@ -356,8 +356,11 @@ export default {
             this.total = this.subtotal + this.tax;
         },
         openModal() {
-            $('#myModal').modal('show');
-        },
+  $(document).ready(() => {
+    $(this.$refs.myModal).modal('show');
+  });
+},
+
         generateReceipt() {
             const currentDate = new Date();
             const formattedDate = currentDate.toISOString().replace(/[-:T]/g, '').substring(0, 14);
