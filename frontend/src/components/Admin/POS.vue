@@ -152,9 +152,11 @@
                                             </button>
                                             <button @click="openModal()" type="button"
                                                 class="btn btn-primary btn-lg btn-block mx-auto w-50" data-bs-toggle="modal"
-                                                data-bs-target="#myModal">
-                                                <i class="fa fa-shopping-bag"></i> Charge
+                                                data-bs-target="#myModal" :disabled="carts.length === 0">
+                                                <i class="fa fa-shopping-bag"></i> Charge ({{ carts.length }})
                                             </button>
+
+
                                         </div>
                                     </div>
                                 </form>
@@ -400,8 +402,11 @@ export default {
             } catch (error) {
                 console.error(error);
             }
-            $(this.$refs.myModal).modal('hide');
-
+            this.closeModal();
+        },
+        closeModal() {
+            this.$router.push({ name: 'staff' });
+            $('#myModal').modal('hide');
         },
 
         async submitForm() {
