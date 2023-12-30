@@ -355,8 +355,8 @@ export default {
             this.tax = this.subtotal * this.taxRate;
             this.total = this.subtotal + this.tax;
         },
-        async openModal() {
-            $(this.$refs.myModal).modal('show');
+        openModal() {
+            $('#myModal').modal('show');
         },
         generateReceipt() {
             const currentDate = new Date();
