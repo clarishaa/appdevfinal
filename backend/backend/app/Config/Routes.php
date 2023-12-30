@@ -51,7 +51,6 @@ $routes->get( '/pos', 'POSController::getMenu');
 $routes->get('/getPos/(:segment)', 'POSController::getCart/$1');
 $routes->match(['get', 'post'], '/pay', 'POSController::pay');
 $routes->match(['get', 'post'], '/payment', 'POSController::payment');
-$routes->match(['get', 'post'], '/cancelOrder/(:num)', 'POSController::cancelOrder/$1');
 $routes->post('/logout', 'MainController::logout');
 $routes->get( '/notification/(:segment)', 'NotificationController::notif/$1');
 

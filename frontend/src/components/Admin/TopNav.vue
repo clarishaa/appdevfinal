@@ -9,7 +9,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <router-link to="/admin" class="nav-item nav-link active fs-6">Dashboard</router-link>
+          <router-link to="/" class="nav-item nav-link active fs-6">Dashboard</router-link>
           <div class="nav-item dropdown">
             <router-link to="#" class="nav-link dropdown-toggle fs-6" data-bs-toggle="dropdown">User Management</router-link>
             <div class="dropdown-menu bg-light m-0">

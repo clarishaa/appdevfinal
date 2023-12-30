@@ -140,6 +140,7 @@
                                     <dt class="fw-bold">Total:</dt>
                                     <dd class="text-end"><span>₱ {{ total.toLocaleString('en-US') }}</span></dd>
                                 </dl>
+                                <form action="/posdel" method="post">
                                     <!-- Cart IDs Loop Placeholder -->
                                     <input type="hidden" name="cart_ids[]" value="cart_id">
                                     <div class="row">
@@ -148,13 +149,14 @@
                                                 class="btn btn-danger btn-lg btn-block mx-auto w-50">
                                                 <i class="fa fa-times-circle"></i> Cancel
                                             </button>
-                                            <button @click="openModal()" type="button"
+                                            <button @click="openModal" type="button"
                                                 class="btn btn-primary btn-lg btn-block mx-auto w-50" data-toggle="modal"
                                                 data-target="#myModal">
                                                 <i class="fa fa-shopping-bag"></i> Charge
                                             </button>
                                         </div>
                                     </div>
+                                </form>
 
                             </div> <!-- box -->
                         </div>
@@ -163,7 +165,7 @@
                         <form @submit.prevent="submitForm">
                             <div class="input-group mt-2">
                                 <input type="text" class="form-control" v-model="invoice_id" id="qrCodeInput"
-                                    placeholder="Enter invoice number." />
+                                    placeholder="Scan QR or enter invoice number." />
                                 <button type="submit" class="btn btn-primary me-1">Submit</button>
                             </div>
                         </form>
@@ -354,10 +356,8 @@ export default {
             this.total = this.subtotal + this.tax;
         },
         openModal() {
-    console.log('Modal reference:', this.$refs.myModal);
-    $(this.$refs.myModal).modal('show');
-}
-,
+            $(this.$refs.myModal).modal('show');
+        },
         generateReceipt() {
             const currentDate = new Date();
             const formattedDate = currentDate.toISOString().replace(/[-:T]/g, '').substring(0, 14);
@@ -415,10 +415,8 @@ export default {
             console.log('Invoice ID submitted:', this.invoice_id);
         },
         async cancelOrder() {
-            const user_id = sessionStorage.getItem("user_id");
-
             try {
-                const response = await axios.post(`/cancelOrder/${user_id}`);
+                const response = await axios.post('cancelOrder');
 
             } catch (error) {
                 console.error(error);
