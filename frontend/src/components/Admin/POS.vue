@@ -151,8 +151,8 @@
                                                 <i class="fa fa-times-circle"></i> Cancel
                                             </button>
                                             <button @click="openModal()" type="button"
-                                                class="btn btn-primary btn-lg btn-block mx-auto w-50" data-toggle="modal"
-                                                data-target="#myModal">
+                                                class="btn btn-primary btn-lg btn-block mx-auto w-50" data-bs-toggle="modal"
+                                                data-bs-target="#myModal">
                                                 <i class="fa fa-shopping-bag"></i> Charge
                                             </button>
                                         </div>
@@ -357,7 +357,7 @@ export default {
             this.total = this.subtotal + this.tax;
         },
         openModal() {
-            jQuery(this.$refs.myModal).modal('show');
+            $(this.$refs.myModal).modal('show');
         },
 
         generateReceipt() {
