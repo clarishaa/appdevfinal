@@ -25,8 +25,9 @@
                                 <figure class="card card-product"
                                     style="height: 230px; border: 1px solid #ccc; border-radius: 10px; overflow: hidden; position: relative;">
                                     <div class="img-wrap" style="height: 70%;">
-                                        <img :src="`https://cbmlaminsu.online/backend/uploads/${menu.img_path}`"  alt="menu.name"
-                                            class="img-fluid" style="object-fit: cover; width: 100%; height: 100%;">
+                                        <img :src="`https://cbmlaminsu.online/backend/uploads/${menu.img_path}`"
+                                            alt="menu.name" class="img-fluid"
+                                            style="object-fit: cover; width: 100%; height: 100%;">
                                     </div>
                                     <figcaption class="info-wrap"
                                         style="height: 30%; background-color: #f8f9fa; padding: 10px;">
@@ -78,8 +79,8 @@
                                             <td>
                                                 <div class="media">
                                                     <div class="img-wrap">
-                                                        <img :src="`https://cbmlaminsu.online/backend/uploads/${cart.img_path}`" class="img-xs"
-                                                            alt="" style="width: 75px; height: 75px;">
+                                                        <img :src="`https://cbmlaminsu.online/backend/uploads/${cart.img_path}`"
+                                                            class="img-xs" alt="" style="width: 75px; height: 75px;">
                                                     </div>
                                                     <div class="media-body" style="margin-top: 5px;">
                                                         <h6 class="title text-truncate">{{ cart.item_name }}</h6>
@@ -356,10 +357,8 @@ export default {
             this.total = this.subtotal + this.tax;
         },
         openModal() {
-  $(document).ready(() => {
-    $(this.$refs.myModal).modal('show');
-  });
-},
+            jQuery(this.$refs.myModal).modal('show');
+        },
 
         generateReceipt() {
             const currentDate = new Date();
