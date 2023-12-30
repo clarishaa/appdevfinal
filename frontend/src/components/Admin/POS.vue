@@ -400,6 +400,8 @@ export default {
             } catch (error) {
                 console.error(error);
             }
+            $(this.$refs.myModal).modal('hide');
+
         },
 
         async submitForm() {
