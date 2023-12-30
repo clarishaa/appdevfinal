@@ -355,7 +355,7 @@ export default {
             this.tax = this.subtotal * this.taxRate;
             this.total = this.subtotal + this.tax;
         },
-        openModal() {
+        async openModal() {
             $(this.$refs.myModal).modal('show');
         },
         generateReceipt() {
