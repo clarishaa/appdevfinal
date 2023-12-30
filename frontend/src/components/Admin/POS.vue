@@ -253,7 +253,7 @@
 import Notification from '@/components/Notification.vue';
 import axios from 'axios'
 export default {
-    name: 'Menus',
+    name: 'POS',
     components: {
         Notification
     },
