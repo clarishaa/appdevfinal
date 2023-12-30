@@ -148,7 +148,7 @@
                                                 class="btn btn-danger btn-lg btn-block mx-auto w-50">
                                                 <i class="fa fa-times-circle"></i> Cancel
                                             </button>
-                                            <button @click="openModal" type="button"
+                                            <button @click="openModal()" type="button"
                                                 class="btn btn-primary btn-lg btn-block mx-auto w-50" data-toggle="modal"
                                                 data-target="#myModal">
                                                 <i class="fa fa-shopping-bag"></i> Charge
@@ -354,8 +354,10 @@ export default {
             this.total = this.subtotal + this.tax;
         },
         openModal() {
-            $(this.$refs.myModal).modal('show');
-        },
+    console.log('Modal reference:', this.$refs.myModal);
+    $(this.$refs.myModal).modal('show');
+}
+,
         generateReceipt() {
             const currentDate = new Date();
             const formattedDate = currentDate.toISOString().replace(/[-:T]/g, '').substring(0, 14);
